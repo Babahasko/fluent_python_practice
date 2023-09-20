@@ -37,4 +37,12 @@ print(tup_seq)
 arr_seq = array.array('I', (ord(s) for s in symbols))
 print(arr_seq)
 
+print('=='*20)
+print('Cartesian product in gen exp')
+colors = ['black', 'red', 'yellow']
+dogs = ['korgy', 'pitbul', 'bulldog']
+for dog in (f'{c},{d}' for c in colors for d in dogs):
+    print(dog)
+#The generator expression yields items one by one; a list with all six T-shirt varia‐
+#tions is never produced in this example.
 
