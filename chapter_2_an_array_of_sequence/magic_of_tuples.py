@@ -142,4 +142,5 @@ main()
 2. The subject and the pattern have the same number of items and;
 3. Each corresponding item matches, including nested items."""
 
-#page 73
+print('=='*20)
+print('Alternative patterns for lambda')
