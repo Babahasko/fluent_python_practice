@@ -1,0 +1,6 @@
+In line with Python’s fail-fast philosophy, dict access with d[k] raises an error when
+k is not an existing key. Pythonistas know that d.get(k, default) is an alternative
+to d[k] whenever a default value is more convenient than handling KeyError. How‐
+ever, when you retrieve a mutable value and want to update it, there is a better way.
+Consider a script to index text, producing a mapping where each key is a word, and
+the value is a list of positions where that word occurs, as shown in Example 3-3.

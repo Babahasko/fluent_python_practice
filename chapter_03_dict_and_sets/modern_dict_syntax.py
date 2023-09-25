@@ -1,5 +1,5 @@
 from collections import OrderedDict
-
+from collections import abc
 
 print('=='*20)
 print('Dict Comprehensions')
@@ -83,3 +83,40 @@ food = dict(category='ice cream', flavor='vanilla', cost=199)
 match food:
     case {'category': 'ice cream', **details}:
         print(f'Ice cream details: {details}')
+
+print('=='*20)
+print('Standard API of Mapping Types')
+my_dict = {}
+print(isinstance(my_dict, abc.Mapping))
+print(isinstance(my_dict, abc.MutableMapping))
+
+print('What Is Hashable')
+tt = (1, 2, (30, 10))
+print(hash(tt))
+# tl = (1, 2, [30,10])
+# print(hash(tl))
+tf = (1, 2, frozenset([30, 40]))
+print(hash(tf))
+
+print('=='*20)
+print("collections.ChainMap")
+d1 = dict(a=1, b=3)
+d2 = dict(a=2, b=4, c=6)
+from collections import ChainMap
+chain = ChainMap(d1, d2)
+print(chain['a'])
+print(chain['c'])
+chain['c'] = -1
+print(d1)
+print(d2)
+
+print('=='*20)
+print('collections.Counter')
+import collections
+ct = collections.Counter('abracadabra')
+print(ct)
+ct.update('aaaaaazzzzzzzz')
+print(ct)
+print(ct.most_common(3))
+#page 127
+
