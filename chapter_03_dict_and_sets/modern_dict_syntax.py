@@ -118,5 +118,19 @@ print(ct)
 ct.update('aaaaaazzzzzzzz')
 print(ct)
 print(ct.most_common(3))
-#page 127
+
+
+print('=='*20)
+print('Immutable Mappings')
+from types import MappingProxyType
+d = {1: 'A'}
+d_proxy = MappingProxyType(d)
+print(d_proxy)
+print(d_proxy[1])
+#d_proxy[2] = 'x'
+d[2] = 'B'
+print(d_proxy[2])
+print(d_proxy)
+
+
 
